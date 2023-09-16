@@ -1,0 +1,35 @@
+﻿<Window x:Class="WeatherControlSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Weather Control System" Height="500" Width="800"
+        DataContext="{}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Административная единица:" Margin="0,0,5,28" Grid.RowSpan="2" Width="NaN" />
+        <TextBox Grid.Row="1" Name="cityTextBox" Margin="5,5,5,5" Width="NaN"
+                 PreviewTextInput="cityTextBox_PreviewTextInput" />
+        <Button x:Name="GetData" Grid.Row="2" Content="Вывести данные" Margin="5,5,5,5" Click="GetData_Click" />
+        <Button x:Name="UpdateData" Grid.Column="1" Content="Обновить данные" Margin="5,5,5,5" Grid.Row="2"
+                Click="UpdateData_Click" />
+        <TextBlock Grid.Row="0" Text="Регион:" Margin="0,0,5,28" Grid.RowSpan="2" Width="NaN" Grid.Column="1" />
+        <TextBox Grid.Row="1" x:Name="regionTextBox" Margin="5,5,5,5" Width="NaN" Grid.Column="1"
+                 PreviewTextInput="regionTextBox_PreviewTextInput" />
+        <ContentControl x:Name="StatsForWeather" Content="" Grid.Row="4" Grid.ColumnSpan="2" />
+        <Button x:Name="FillDataBase_Button" Content="Заполнить базу данных" Grid.Row="3" Margin="5,5,5,5"
+                Click="FillDataBase_Button_Click" />
+        <Button x:Name="DeleteSubject_Button" Grid.Column="1" Content="Удалить информацию о населенном пункте" Margin="5,5,5,5" Grid.Row="3" Click="DeleteSubject_Button_Click"/>
+    </Grid>
+</Window>
